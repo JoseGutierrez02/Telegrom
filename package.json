@@ -1,0 +1,28 @@
+{
+  "name": "telegrom",
+  "version": "0.1.0",
+  "description": "A chat like telegram but better",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseGutierrez02/Telegrom.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "Jose Gutierrez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoseGutierrez02/Telegrom/issues"
+  },
+  "homepage": "https://github.com/JoseGutierrez02/Telegrom#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
