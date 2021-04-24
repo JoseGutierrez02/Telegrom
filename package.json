@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/JoseGutierrez02/Telegrom#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.5",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "socket.io": "^4.0.1"
   }
 }

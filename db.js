@@ -1,11 +1,7 @@
 const db = require('mongoose');
-require('dotenv').config();
+const config = require('./config');
 
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-const dbHost = process.env.DB_HOST;
-const dbName = process.env.DB_NAME;
-const URI = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}/${dbName}`;
+const URI = `mongodb+srv://${config.dbUser}:${config.dbPassword}@${config.dbHost}/${config.dbName}`;
 
 db.Promise = global.Promise;
 const connect = async () => {
