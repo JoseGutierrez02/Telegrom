@@ -6,12 +6,13 @@ const addMessage = (message) => {
 };
 
 const getMessages = async (user) => {
-  let filter = {};
-  if(user) {
-    filter.user = new RegExp(user, 'i');
-  }
-  const messageList = await Message.find(filter);
-  return messageList;
+  return new Promise(async (resolve, reject) => {
+    let filter = {};
+    if(user) filter.user = new RegExp(user, 'i');
+    Message.find(filter)
+      .populate('user')
+      .exec((error, populated) => (error) ? reject(error) : resolve(populated));
+  })
 };
 
 const updateMessage = async (id, message) => {
