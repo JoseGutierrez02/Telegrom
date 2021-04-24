@@ -5,13 +5,17 @@ const addMessage = (message) => {
   newMessage.save();
 };
 
-const getMessages = async (user) => {
-  return new Promise(async (resolve, reject) => {
+const getMessages = async (chat) => {
+  return new Promise((resolve, reject) => {
     let filter = {};
-    if(user) filter.user = new RegExp(user, 'i');
+    if(chat) filter.chat = chat;
     Message.find(filter)
       .populate('user')
-      .exec((error, populated) => (error) ? reject(error) : resolve(populated));
+      .exec((error, populated) => {
+        (error) 
+          ? reject(error) 
+          : resolve(populated);
+      });
   })
 };
 
